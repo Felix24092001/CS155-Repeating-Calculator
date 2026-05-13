@@ -1,2 +1,2 @@
 # CS155-Repeating-Calculator
-Final project for CS 155
+This is a calculator that constantly asks for inputs based on user input, and then calculates division, addition, subtraction, mulitplication, and even raising to a power
