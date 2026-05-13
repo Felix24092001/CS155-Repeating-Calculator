@@ -44,8 +44,9 @@ ContProgram
     LEA R0, prompt2
     PUTS
     JSR ReadInput
-    ADD R2, R0, #0    
+    ADD R2, R0, #0   
     
+    GETC
     ;Get operator
     LEA R0, prompt3
     PUTS
@@ -179,18 +180,19 @@ MultLoop
 ; R4 - Negative divisor
 ; R6 - Resulting quotient
 ;*************************************************************************
-divProblem    
-    AND R6, R6, #0    
-    ADD R3, R1, #0    
+divProblem     
+    AND R6, R6, #0
+    ADD R3, R1, #0     
     NOT R4, R2
-    ADD R4, R4, #1    
-    DivLoop       
-        ADD R3, R3, R4
-        BRn EndDiv
-        ADD R6, R6, #1
-        BRnzp DivLoop
-    EndDiv        
-        BRnzp probComplete
+    ADD R4, R4, #1
+DivLoop        
+    ADD R3, R3, R4
+    BRn EndDiv
+    
+    ADD R6, R6, #1
+    BRnzp DivLoop
+EndDiv             
+    BRnzp probComplete
 
 ; *************************************************************************
 ; 3-DIGIT PRINTER
